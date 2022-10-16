@@ -8,18 +8,18 @@ public class App {
         shake.drink();
         shake.taste();
 
-        StrawberryType strawberry = StrawberryType.ANANASOWA;
-        switch (strawberry) {
-            case ANANASOWA:
-                break;
-            case KENT:
-                break;
-            case POLKA:
-                break;
-            case HOENYONE:
-                break;
-            case CHRISTINE:
-                break;
-        }
+//        StrawberryType strawberry = StrawberryType.ANANASOWA;
+//        switch (strawberry) {
+//            case ANANASOWA:
+//                break;
+//            case KENT:
+//                break;
+//            case POLKA:
+//                break;
+//            case HOENYONE:
+//                break;
+//            case CHRISTINE:
+//                break;
+//        }
     }
 }
