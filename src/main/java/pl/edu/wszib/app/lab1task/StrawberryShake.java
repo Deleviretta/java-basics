@@ -31,6 +31,6 @@ public class StrawberryShake extends Shake implements Tasteable {
     }
 
     private int sweetnessLevel() {
-        tasteType().getSweetnessLevel();
+        return tasteType().getSweetnessLevel();
     }
 }

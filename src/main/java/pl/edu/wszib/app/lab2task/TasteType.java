@@ -4,9 +4,9 @@ public enum TasteType {
     TRUSKAWKOWY(40), BANANOWY(50), SZPINAKOWY(5),
     CIASTECZKOWY(60), JABLOKOWY(35);
 
-    private int sweetnessLevel;
+    private final int sweetnessLevel;
 
-    TasteType(int sweetnessLevel) {
+    TasteType(final int sweetnessLevel) {
         this.sweetnessLevel = sweetnessLevel;
     }
 
