@@ -9,11 +9,13 @@ public class StrawberryShake extends Shake implements Tasteable {
 
     @Override
     public void drink() {
-        System.out.println("I drink shake ");
+        String message = String.format("Pije shake %s, ktora cechuje %s", taste(), strawberryType.getType());
+        System.out.println("Pije shake " + taste() + ", ktora cechuje " + strawberryType.getType());
+        System.out.println(message);
     }
 
     @Override
-    public void taste() {
-        System.out.println("with strawberry flavor");
+    public String taste() {
+        return "truskawkowy";
     }
 }
