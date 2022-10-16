@@ -2,14 +2,13 @@ package pl.edu.wszib.app.lab1task;
 
 import pl.edu.wszib.app.lab2task.TasteType;
 
-public class StrawberryShake extends Shake implements Tasteable {
+public class StrawberryShake extends FlavoredShake {
     private static final TasteType STRAWBERRY_TASTE_TYPE = TasteType.TRUSKAWKOWY;
     private final StrawberryType strawberryType;
-    //private final TasteType tasteType;
+
     public StrawberryShake(final int kcal, final StrawberryType strawberryType) {
         super(kcal, STRAWBERRY_TASTE_TYPE);
         this.strawberryType = strawberryType;
-//        this.tasteType = TasteType.TRUSKAWKOWY;
     }
 
     @Override
@@ -21,15 +20,10 @@ public class StrawberryShake extends Shake implements Tasteable {
         System.out.println(message);
     }
 
-    @Override
-    public String taste() {
-        return "truskawkowy";
-    }
-
-    @Override
-    public TasteType tasteType() {
-        return tasteType;
-    }
+//    @Override
+//    public String taste() {
+//        return "truskawkowy";
+//    }
 
     private int sweetnessLevel() {
         return tasteType().getSweetnessLevel();

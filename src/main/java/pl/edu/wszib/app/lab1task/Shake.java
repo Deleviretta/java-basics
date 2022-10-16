@@ -4,11 +4,9 @@ import pl.edu.wszib.app.lab2task.TasteType;
 
 public abstract class Shake implements Eatable, Drinkable {
     protected final int kcal;
-    protected final TasteType tasteType;
 
-    protected Shake(final int kcal, TasteType tasteType) {
+    protected Shake(final int kcal) {
         this.kcal = kcal;
-        this.tasteType = tasteType;
     }
 
     @Override
