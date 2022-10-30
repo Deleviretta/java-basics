@@ -15,19 +15,30 @@ public class StrawberryShake extends FlavoredShake {
 
     @Override
     public void drink() {
-        String tasteSource = calculateTasteSource(getTasteSource());
+//        String tasteSource = calculateTasteSourceSwitchStatement(getTasteSource());
+        String tasteSource = calculateTasteSourceSwitchExpression(getTasteSource());
 
-        String message = String.format("Pije shake %s, ktora cechuje %s", taste(), strawberryType.getType() +
-                " oraz slodkosc " + tasteType().getSweetnessLevel());
-        System.out.println("Pije shake " + taste() + ", ktora cechuje " + strawberryType.getType()
-                + " oraz slodkosc " + sweetnessLevel());
+        String message = String.format("Pije shake %s %s, ktora cechuje %s oraz slodkosc %s", tasteSource, taste(),
+                strawberryType.getType(), tasteType().getSweetnessLevel());
+//        System.out.println("Pije shake " + taste() + ", ktora cechuje " + strawberryType.getType()
+//                + " oraz slodkosc " + sweetnessLevel());
         System.out.println(message);
     }
 
-    private String calculateTasteSource(TasteSource tasteSource) {
+    private String calculateTasteSourceSwitchExpression(TasteSource tasteSource) {
+        return switch (tasteSource) {
+            case OWOCOWY, WARZYWNY, INNY -> tasteSource.getTasteSource();
+        };
+    }
+
+    private String calculateTasteSourceSwitchStatement(TasteSource tasteSource) {
         switch (tasteSource) {
             case OWOCOWY:
-                return tasteSource
+            case WARZYWNY:
+            case INNY:
+                return tasteSource.getTasteSource();
+            default:
+                throw new IllegalStateException("Unexpected state: " + tasteSource);
         }
     }
 

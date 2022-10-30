@@ -9,4 +9,7 @@ public enum TasteSource {
         this.tasteSource = tasteSource;
     }
 
+    public String getTasteSource() {
+        return tasteSource;
+    }
 }
