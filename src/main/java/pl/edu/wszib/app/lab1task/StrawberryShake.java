@@ -3,6 +3,8 @@ package pl.edu.wszib.app.lab1task;
 import pl.edu.wszib.app.lab2task.TasteType;
 import pl.edu.wszib.app.lab3task.TasteSource;
 
+import java.util.Locale;
+
 public class StrawberryShake extends FlavoredShake {
     private static final TasteType STRAWBERRY_TASTE_TYPE = TasteType.TRUSKAWKOWY;
     private static final TasteSource TASTE_SOURCE = TasteSource.OWOCOWY;
@@ -27,7 +29,8 @@ public class StrawberryShake extends FlavoredShake {
 
     private String calculateTasteSourceSwitchExpression(TasteSource tasteSource) {
         return switch (tasteSource) {
-            case OWOCOWY, WARZYWNY, INNY -> tasteSource.getTasteSource();
+            case OWOCOWY, WARZYWNY, INNY -> tasteSource.name().toLowerCase(Locale.ENGLISH);
+            //tasteSource.getTasteSource();
         };
     }
 
@@ -36,7 +39,8 @@ public class StrawberryShake extends FlavoredShake {
             case OWOCOWY:
             case WARZYWNY:
             case INNY:
-                return tasteSource.getTasteSource();
+                return tasteSource.name().toLowerCase(Locale.ENGLISH);
+                //return tasteSource.getTasteSource();
             default:
                 throw new IllegalStateException("Unexpected state: " + tasteSource);
         }
