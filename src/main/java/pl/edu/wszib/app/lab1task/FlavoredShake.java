@@ -14,11 +14,12 @@ public abstract class FlavoredShake extends Shake implements Tasteable {
         this.tasteType = tasteType;
         this.tasteSource = tasteSource;
     }
-     protected FlavoredShake(final int kcal, final TasteType tasteType) {
+
+    protected FlavoredShake(final int kcal, final TasteType tasteType) {
         super(kcal);
         this.tasteType = tasteType;
         this.tasteSource = calculateTasteSourceFromTasteType();
-     }
+    }
 
     private TasteSource calculateTasteSourceFromTasteType() {
         return switch (tasteType) {
