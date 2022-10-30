@@ -11,7 +11,8 @@ public class StrawberryShake extends FlavoredShake {
     private final StrawberryType strawberryType;
 
     public StrawberryShake(final int kcal, final StrawberryType strawberryType) {
-        super(kcal, STRAWBERRY_TASTE_TYPE, TASTE_SOURCE);
+//        super(kcal, STRAWBERRY_TASTE_TYPE, TASTE_SOURCE);
+        super(kcal, STRAWBERRY_TASTE_TYPE);
         this.strawberryType = strawberryType;
     }
 

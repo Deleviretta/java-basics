@@ -14,6 +14,29 @@ public abstract class FlavoredShake extends Shake implements Tasteable {
         this.tasteType = tasteType;
         this.tasteSource = tasteSource;
     }
+     protected FlavoredShake(final int kcal, final TasteType tasteType) {
+        super(kcal);
+        this.tasteType = tasteType;
+        this.tasteSource = calculateTasteSourceFromTasteType();
+     }
+
+    private TasteSource calculateTasteSourceFromTasteType() {
+        return switch (tasteType) {
+            case TRUSKAWKOWY, BANANOWY, JABLOKOWY -> TasteSource.OWOCOWY;
+            case SZPINAKOWY -> TasteSource.WARZYWNY;
+            case CIASTECZKOWY -> TasteSource.INNY;
+        };
+        //        switch (tasteType) {
+//            case TRUSKAWKOWY, BANANOWY, JABLOKOWY:
+//                return TasteSource.OWOCOWY;
+//            case SZPINAKOWY:
+//                return TasteSource.WARZYWNY;
+//            case CIASTECZKOWY:
+//                return TasteSource.INNY;
+//            default:
+//                throw new IllegalStateException("Unexpected type: " + tasteType);
+//        }
+    }
 
     @Override
     public TasteType tasteType() {
